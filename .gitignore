@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Node
+node_modules/
+
+# Next.js build output
+frontend/.next/
+frontend/out/
+
+# Environment — NEVER commit these
+.env
+.env.local
+.env*.local
+frontend/.env
+frontend/.env.local
+frontend/.env*.local
+
+# Data files (contains lead submissions)
+data/
+
+# Editor
+.idea/
+.vscode/
+*.swp

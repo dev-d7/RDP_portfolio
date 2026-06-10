@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui,-apple-system,sans-serif">
+  <defs>
+    <linearGradient id="siteHeroGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#3730a3"/>
+    </linearGradient>
+    <linearGradient id="scoreGreenGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <clipPath id="browserClip">
+      <rect x="8" y="40" width="784" height="402" rx="0"/>
+    </clipPath>
+  </defs>
+
+  <!-- Browser chrome -->
+  <rect width="800" height="450" rx="10" fill="#1e293b"/>
+
+  <!-- Browser top bar -->
+  <rect width="800" height="40" rx="10" fill="#334155"/>
+  <rect x="0" y="24" width="800" height="16" fill="#334155"/>
+
+  <!-- Traffic lights -->
+  <circle cx="20" cy="20" r="7" fill="#ef4444"/>
+  <circle cx="40" cy="20" r="7" fill="#f59e0b"/>
+  <circle cx="60" cy="20" r="7" fill="#10b981"/>
+
+  <!-- URL bar -->
+  <rect x="100" y="8" width="500" height="24" rx="12" fill="#0f172a"/>
+  <text x="160" y="24" fill="#64748b" font-size="12">🔒</text>
+  <text x="178" y="25" fill="#94a3b8" font-size="12">rdpstudio.in</text>
+  <text x="620" y="25" fill="#475569" font-size="12">↻</text>
+
+  <!-- Tabs -->
+  <rect x="648" y="4" width="140" height="32" rx="6" fill="#0f172a"/>
+  <text x="718" y="24" fill="#94a3b8" font-size="11" text-anchor="middle">rdpstudio.in/home</text>
+
+  <!-- ====== WEBSITE CONTENT ====== -->
+  <g clip-path="url(#browserClip)">
+    <!-- Main website background -->
+    <rect x="0" y="40" width="800" height="402" fill="#ffffff"/>
+
+    <!-- LEFT side: Website preview (550px wide) -->
+
+    <!-- Site Nav bar -->
+    <rect x="0" y="40" width="550" height="44" fill="#ffffff" stroke="#f1f5f9" stroke-width="1"/>
+    <rect x="16" y="52" width="20" height="20" rx="5" fill="#1e3a8a"/>
+    <text x="26" y="66" fill="#fff" font-size="10" font-weight="800" text-anchor="middle">R</text>
+    <text x="42" y="66" fill="#1e293b" font-size="13" font-weight="700">RDP Studio</text>
+    <text x="160" y="66" fill="#64748b" font-size="12">Services</text>
+    <text x="220" y="66" fill="#64748b" font-size="12">Work</text>
+    <text x="270" y="66" fill="#64748b" font-size="12">About</text>
+    <rect x="320" y="53" width="80" height="22" rx="11" fill="#1e3a8a"/>
+    <text x="360" y="68" fill="#fff" font-size="11" font-weight="600" text-anchor="middle">Contact Us</text>
+
+    <!-- Hero section -->
+    <rect x="0" y="84" width="550" height="160" fill="url(#siteHeroGrad)"/>
+    <text x="42" y="116" fill="rgba(255,255,255,0.6)" font-size="11" font-weight="500" letter-spacing="2">PRODUCT ENGINEERING STUDIO</text>
+    <text x="42" y="142" fill="#ffffff" font-size="22" font-weight="800">We build digital products</text>
+    <text x="42" y="164" fill="#ffffff" font-size="22" font-weight="800">that scale reliably.</text>
+    <text x="42" y="184" fill="rgba(255,255,255,0.7)" font-size="12">Live streaming · HRMS · EdTech · AWS · Mobile</text>
+    <rect x="42" y="198" width="110" height="30" rx="15" fill="#ffffff"/>
+    <text x="97" y="218" fill="#1e3a8a" font-size="12" font-weight="700" text-anchor="middle">Get Started →</text>
+    <rect x="162" y="198" width="110" height="30" rx="15" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="217" y="218" fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle">View Work</text>
+
+    <!-- Services grid teaser -->
+    <rect x="0" y="244" width="550" height="8" fill="#f8fafc"/>
+    <text x="42" y="268" fill="#64748b" font-size="10" font-weight="600" letter-spacing="1">OUR SERVICES</text>
+    <!-- Service cards -->
+    <rect x="16" y="276" width="110" height="60" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="71" y="298" font-size="18" text-anchor="middle">📡</text>
+    <text x="71" y="312" fill="#1e293b" font-size="10" font-weight="700" text-anchor="middle">Live Streaming</text>
+    <text x="71" y="324" fill="#64748b" font-size="9" text-anchor="middle">OTT · HLS · CDN</text>
+
+    <rect x="136" y="276" width="110" height="60" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="191" y="298" font-size="18" text-anchor="middle">☁</text>
+    <text x="191" y="312" fill="#1e293b" font-size="10" font-weight="700" text-anchor="middle">Cloud &amp; DevOps</text>
+    <text x="191" y="324" fill="#64748b" font-size="9" text-anchor="middle">AWS · EKS · Terraform</text>
+
+    <rect x="256" y="276" width="110" height="60" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="311" y="298" font-size="18" text-anchor="middle">📱</text>
+    <text x="311" y="312" fill="#1e293b" font-size="10" font-weight="700" text-anchor="middle">Mobile Apps</text>
+    <text x="311" y="324" fill="#64748b" font-size="9" text-anchor="middle">RN · Deep Links</text>
+
+    <rect x="376" y="276" width="110" height="60" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="431" y="298" font-size="18" text-anchor="middle">🔍</text>
+    <text x="431" y="312" fill="#1e293b" font-size="10" font-weight="700" text-anchor="middle">SEO &amp; Growth</text>
+    <text x="431" y="324" fill="#64748b" font-size="9" text-anchor="middle">CWV · Schema · GSC</text>
+
+    <!-- Footer area -->
+    <rect x="0" y="350" width="550" height="92" fill="#0f172a"/>
+    <text x="42" y="374" fill="#fff" font-size="13" font-weight="700">RDP Studio</text>
+    <text x="42" y="390" fill="#64748b" font-size="11">Product engineering · Cloud · Mobile · SEO</text>
+    <text x="42" y="414" fill="#475569" font-size="10">© 2026 RDP · devansh@nexttoppers.com</text>
+    <!-- CWV scores in footer preview -->
+    <text x="310" y="374" fill="#64748b" font-size="11">Core Web Vitals</text>
+    <circle cx="330" cy="396" r="10" fill="none" stroke="#10b981" stroke-width="3"/>
+    <text x="330" y="400" fill="#10b981" font-size="8" font-weight="800" text-anchor="middle">98</text>
+    <text x="330" y="412" fill="#64748b" font-size="9" text-anchor="middle">Perf</text>
+    <circle cx="370" cy="396" r="10" fill="none" stroke="#10b981" stroke-width="3"/>
+    <text x="370" y="400" fill="#10b981" font-size="8" font-weight="800" text-anchor="middle">100</text>
+    <text x="370" y="412" fill="#64748b" font-size="9" text-anchor="middle">A11y</text>
+    <circle cx="410" cy="396" r="10" fill="none" stroke="#10b981" stroke-width="3"/>
+    <text x="410" y="400" fill="#10b981" font-size="8" font-weight="800" text-anchor="middle">100</text>
+    <text x="410" y="412" fill="#64748b" font-size="9" text-anchor="middle">SEO</text>
+    <circle cx="450" cy="396" r="10" fill="none" stroke="#10b981" stroke-width="3"/>
+    <text x="450" y="400" fill="#10b981" font-size="8" font-weight="800" text-anchor="middle">100</text>
+    <text x="450" y="412" fill="#64748b" font-size="9" text-anchor="middle">BP</text>
+
+    <!-- RIGHT side: SEO Analytics Panel (250px) -->
+    <rect x="550" y="40" width="250" height="402" fill="#0f172a"/>
+
+    <!-- Panel header -->
+    <rect x="550" y="40" width="250" height="36" fill="#1e293b"/>
+    <text x="675" y="62" fill="#fff" font-size="13" font-weight="700" text-anchor="middle">📊 SEO Dashboard</text>
+
+    <!-- Organic traffic chart -->
+    <text x="562" y="96" fill="#94a3b8" font-size="11" font-weight="600">ORGANIC TRAFFIC</text>
+    <text x="562" y="115" fill="#ffffff" font-size="22" font-weight="800">24,812</text>
+    <text x="562" y="130" fill="#10b981" font-size="11">↑ 34.2% vs last month</text>
+    <!-- Mini sparkline -->
+    <polyline points="562,160 580,152 598,155 616,140 634,135 652,128 670,120 688,112 706,108 724,104 742,98 760,94 778,88 796,82" stroke="#3b82f6" stroke-width="2" fill="none"/>
+    <rect x="562" y="88" width="234" height="80" fill="none"/>
+
+    <!-- Rank table -->
+    <rect x="562" y="178" width="234" height="1" fill="#1e293b"/>
+    <text x="562" y="196" fill="#94a3b8" font-size="10" font-weight="600">TOP RANKING KEYWORDS</text>
+
+    <text x="562" y="214" fill="#fff" font-size="11">live streaming platform india</text>
+    <text x="754" y="214" fill="#10b981" font-size="11" text-anchor="end">#2</text>
+
+    <text x="562" y="230" fill="#fff" font-size="11">hrms software india</text>
+    <text x="754" y="230" fill="#10b981" font-size="11" text-anchor="end">#4</text>
+
+    <text x="562" y="246" fill="#fff" font-size="11">edtech test series platform</text>
+    <text x="754" y="246" fill="#f59e0b" font-size="11" text-anchor="end">#7</text>
+
+    <text x="562" y="262" fill="#fff" font-size="11">aws devops consulting india</text>
+    <text x="754" y="262" fill="#10b981" font-size="11" text-anchor="end">#3</text>
+
+    <text x="562" y="278" fill="#fff" font-size="11">react native deep linking</text>
+    <text x="754" y="278" fill="#f59e0b" font-size="11" text-anchor="end">#9</text>
+
+    <!-- Divider -->
+    <rect x="562" y="288" width="234" height="1" fill="#1e293b"/>
+
+    <!-- CWV scores -->
+    <text x="562" y="306" fill="#94a3b8" font-size="10" font-weight="600">CORE WEB VITALS</text>
+
+    <rect x="562" y="312" width="234" height="18" rx="4" fill="rgba(255,255,255,0.04)"/>
+    <text x="568" y="325" fill="#94a3b8" font-size="11">LCP (Largest Contentful Paint)</text>
+    <text x="786" y="325" fill="#10b981" font-size="11" font-weight="700" text-anchor="end">1.2s</text>
+
+    <rect x="562" y="334" width="234" height="18" rx="4" fill="rgba(255,255,255,0.04)"/>
+    <text x="568" y="347" fill="#94a3b8" font-size="11">FID (First Input Delay)</text>
+    <text x="786" y="347" fill="#10b981" font-size="11" font-weight="700" text-anchor="end">8ms</text>
+
+    <rect x="562" y="356" width="234" height="18" rx="4" fill="rgba(255,255,255,0.04)"/>
+    <text x="568" y="369" fill="#94a3b8" font-size="11">CLS (Layout Shift)</text>
+    <text x="786" y="369" fill="#10b981" font-size="11" font-weight="700" text-anchor="end">0.02</text>
+
+    <!-- Backlinks + Schema -->
+    <rect x="562" y="382" width="112" height="50" rx="8" fill="#1e293b"/>
+    <text x="618" y="400" fill="#94a3b8" font-size="10" text-anchor="middle">BACKLINKS</text>
+    <text x="618" y="420" fill="#fff" font-size="18" font-weight="800" text-anchor="middle">1,284</text>
+
+    <rect x="682" y="382" width="112" height="50" rx="8" fill="#1e293b"/>
+    <text x="738" y="400" fill="#94a3b8" font-size="10" text-anchor="middle">SCHEMA TYPES</text>
+    <text x="738" y="420" fill="#fff" font-size="18" font-weight="800" text-anchor="middle">12</text>
+
+    <!-- Vertical divider -->
+    <rect x="550" y="40" width="1" fill="#1e3a8a" height="402"/>
+  </g>
+</svg>

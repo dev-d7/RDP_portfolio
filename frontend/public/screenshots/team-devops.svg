@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" font-family="system-ui,-apple-system,sans-serif">
+  <defs>
+    <linearGradient id="avatarGrad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#065f46"/>
+      <stop offset="100%" stop-color="#064e3b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="240" height="240" fill="url(#avatarGrad2)"/>
+
+  <!-- Decorative -->
+  <circle cx="30" cy="30" r="70" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="210" cy="210" r="80" fill="rgba(255,255,255,0.04)"/>
+  <circle cx="120" cy="120" r="90" fill="rgba(255,255,255,0.03)"/>
+
+  <!-- Tech pattern hints -->
+  <text x="26" y="54" fill="rgba(255,255,255,0.08)" font-size="11" font-family="monospace">{ eks: true }</text>
+  <text x="26" y="72" fill="rgba(255,255,255,0.06)" font-size="10" font-family="monospace">terraform apply</text>
+  <text x="142" y="46" fill="rgba(255,255,255,0.06)" font-size="10" font-family="monospace">kubectl get pods</text>
+
+  <!-- Large initials -->
+  <text x="120" y="148" fill="#ffffff" font-size="88" font-weight="800" text-anchor="middle" letter-spacing="-2">KS</text>
+
+  <!-- Name tag -->
+  <rect x="28" y="186" width="184" height="36" rx="10" fill="rgba(255,255,255,0.15)"/>
+  <text x="120" y="199" fill="rgba(255,255,255,0.7)" font-size="10" font-weight="500" text-anchor="middle" letter-spacing="2">DEVOPS LEAD</text>
+  <text x="120" y="215" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">Cloud &amp; Infrastructure</text>
+</svg>

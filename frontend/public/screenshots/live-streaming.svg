@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui,-apple-system,sans-serif">
+  <defs>
+    <linearGradient id="videoBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f1a2e"/>
+      <stop offset="100%" stop-color="#050508"/>
+    </linearGradient>
+    <linearGradient id="progressBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e63946"/>
+      <stop offset="100%" stop-color="#ff6b6b"/>
+    </linearGradient>
+    <clipPath id="videoClip"><rect x="0" y="50" width="562" height="340"/></clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="#0a0a0a"/>
+
+  <!-- Top bar -->
+  <rect width="800" height="50" fill="#141414"/>
+  <rect x="0" y="49" width="800" height="1" fill="#222222"/>
+  <rect x="16" y="15" width="22" height="22" rx="5" fill="#e63946"/>
+  <text x="24" y="30" fill="#fff" font-size="11" font-weight="800" text-anchor="middle">R</text>
+  <text x="46" y="30" fill="#ffffff" font-size="14" font-weight="700">RDP Stream</text>
+
+  <!-- Search bar -->
+  <rect x="240" y="13" width="220" height="26" rx="13" fill="#1e1e1e" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="258" y="30" fill="#555" font-size="12">🔍  Search streams…</text>
+
+  <!-- LIVE badge -->
+  <rect x="566" y="13" width="44" height="24" rx="4" fill="#e63946"/>
+  <text x="588" y="30" fill="#fff" font-size="11" font-weight="800" text-anchor="middle">LIVE</text>
+
+  <!-- Viewer pill -->
+  <circle cx="618" cy="25" r="5" fill="#00d68f"/>
+  <text x="628" y="30" fill="#888" font-size="12">62,841 watching</text>
+
+  <!-- Avatar -->
+  <circle cx="776" cy="25" r="14" fill="#0f62fe"/>
+  <text x="776" y="30" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">D</text>
+
+  <!-- Video Player Area -->
+  <rect x="0" y="50" width="562" height="340" fill="url(#videoBg)"/>
+
+  <!-- Video subtle grid/noise effect -->
+  <rect x="0" y="50" width="562" height="340" fill="none" stroke="#0f1a2e" stroke-width="0"/>
+
+  <!-- Broadcast visual - wave lines -->
+  <path d="M 100 220 Q 140 180 180 220 Q 220 260 260 220 Q 300 180 340 220 Q 380 260 420 220 Q 460 180 500 220" stroke="#0f62fe" stroke-opacity="0.18" stroke-width="2" fill="none"/>
+  <path d="M 80 240 Q 130 190 180 240 Q 230 290 280 240 Q 330 190 380 240 Q 430 290 480 240 Q 510 210 540 240" stroke="#0f62fe" stroke-opacity="0.1" stroke-width="1.5" fill="none"/>
+
+  <!-- Speaker / presenter silhouette area -->
+  <ellipse cx="281" cy="280" rx="60" ry="20" fill="#0f62fe" fill-opacity="0.06"/>
+  <ellipse cx="281" cy="230" rx="32" ry="38" fill="#1a2a3a" fill-opacity="0.6"/>
+  <ellipse cx="281" cy="198" rx="22" ry="22" fill="#1e3050" fill-opacity="0.8"/>
+
+  <!-- Center play/pause indicator -->
+  <circle cx="281" cy="220" r="36" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+  <polygon points="272,208 272,233 298,220" fill="rgba(255,255,255,0.85)"/>
+
+  <!-- Stream title overlay (bottom of video) -->
+  <rect x="0" y="342" width="562" height="48" fill="linear-gradient(transparent,rgba(0,0,0,0.85))"/>
+  <rect x="0" y="360" width="562" height="30" fill="rgba(0,0,0,0.55)"/>
+  <text x="14" y="377" fill="#ffffff" font-size="13" font-weight="700">🎓 LIVE: JEE Advanced 2025 — Physics Masterclass with Prof. Sharma</text>
+
+  <!-- Video controls -->
+  <rect x="0" y="390" width="562" height="36" fill="#111111"/>
+  <!-- Timeline -->
+  <rect x="12" y="401" width="380" height="3" rx="1.5" fill="#333333"/>
+  <rect x="12" y="401" width="155" height="3" rx="1.5" fill="url(#progressBar)"/>
+  <circle cx="167" cy="402" r="6" fill="#e63946"/>
+  <!-- Time -->
+  <text x="400" y="410" fill="#999" font-size="11">01:22:38 / 02:30:00</text>
+  <!-- Icons -->
+  <text x="466" y="412" fill="#cccccc" font-size="13">⏸</text>
+  <text x="490" y="412" fill="#cccccc" font-size="13">🔊</text>
+  <text x="516" y="412" fill="#cccccc" font-size="11">HD</text>
+  <rect x="514" y="399" width="22" height="14" rx="3" fill="none" stroke="#666" stroke-width="1"/>
+  <text x="543" y="412" fill="#cccccc" font-size="13">⛶</text>
+
+  <!-- Chat Panel -->
+  <rect x="562" y="50" width="238" height="400" fill="#111111"/>
+  <rect x="562" y="50" width="238" height="1" fill="#1e1e1e"/>
+
+  <!-- Chat header -->
+  <rect x="562" y="50" width="238" height="40" fill="#161616"/>
+  <text x="578" y="75" fill="#ffffff" font-size="13" font-weight="700">💬 Live Chat</text>
+  <rect x="758" y="62" width="32" height="18" rx="9" fill="#e63946"/>
+  <text x="774" y="75" fill="#fff" font-size="10" font-weight="700" text-anchor="middle">LIVE</text>
+
+  <!-- Chat messages -->
+  <circle cx="578" cy="112" r="9" fill="#7c3aed"/>
+  <text x="578" cy="116" fill="#fff" font-size="9" font-weight="700" text-anchor="middle" y="116">P</text>
+  <text x="594" y="107" fill="#a78bfa" font-size="11" font-weight="700">Priya M.</text>
+  <text x="594" y="121" fill="#aaaaaa" font-size="11">🔥 This explanation is crystal clear!</text>
+
+  <circle cx="578" cy="148" r="9" fill="#0f62fe"/>
+  <text x="578" y="152" fill="#fff" font-size="9" font-weight="700" text-anchor="middle">A</text>
+  <text x="594" y="143" fill="#60a5fa" font-size="11" font-weight="700">Arjun K.</text>
+  <text x="594" y="157" fill="#aaaaaa" font-size="11">No lag at all 👌 amazing infra</text>
+
+  <circle cx="578" cy="184" r="9" fill="#059669"/>
+  <text x="578" y="188" fill="#fff" font-size="9" font-weight="700" text-anchor="middle">R</text>
+  <text x="594" y="179" fill="#34d399" font-size="11" font-weight="700">Rahul S.</text>
+  <text x="594" y="193" fill="#aaaaaa" font-size="11">60K watching simultaneously 🚀</text>
+
+  <circle cx="578" cy="220" r="9" fill="#d97706"/>
+  <text x="578" y="224" fill="#fff" font-size="9" font-weight="700" text-anchor="middle">S</text>
+  <text x="594" y="215" fill="#fbbf24" font-size="11" font-weight="700">Sneha V.</text>
+  <text x="594" y="229" fill="#aaaaaa" font-size="11">Best live class platform! ⭐⭐⭐⭐⭐</text>
+
+  <circle cx="578" cy="256" r="9" fill="#e11d48"/>
+  <text x="578" y="260" fill="#fff" font-size="9" font-weight="700" text-anchor="middle">K</text>
+  <text x="594" y="251" fill="#fb7185" font-size="11" font-weight="700">Kiran D.</text>
+  <text x="594" y="265" fill="#aaaaaa" font-size="11">2s latency is insane 🎯</text>
+
+  <circle cx="578" cy="292" r="9" fill="#0891b2"/>
+  <text x="578" y="296" fill="#fff" font-size="9" font-weight="700" text-anchor="middle">M</text>
+  <text x="594" y="287" fill="#22d3ee" font-size="11" font-weight="700">Mohan R.</text>
+  <text x="594" y="301" fill="#aaaaaa" font-size="11">Watching from Singapore 🇸🇬</text>
+
+  <circle cx="578" cy="328" r="9" fill="#7c3aed"/>
+  <text x="578" y="332" fill="#fff" font-size="9" font-weight="700" text-anchor="middle">T</text>
+  <text x="594" y="323" fill="#a78bfa" font-size="11" font-weight="700">Tanvi G.</text>
+  <text x="594" y="337" fill="#aaaaaa" font-size="11">Can we get the PDF notes? 📚</text>
+
+  <!-- Divider -->
+  <rect x="562" y="362" width="238" height="1" fill="#1e1e1e"/>
+
+  <!-- Chat input -->
+  <rect x="570" y="370" width="158" height="32" rx="6" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="584" y="391" fill="#555555" font-size="12">Message…</text>
+  <rect x="734" y="370" width="58" height="32" rx="6" fill="#0f62fe"/>
+  <text x="763" y="391" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">Send</text>
+
+  <!-- Bottom stats bar -->
+  <rect x="0" y="426" width="800" height="24" fill="#0f0f0f"/>
+  <rect x="0" y="426" width="800" height="1" fill="#1e1e1e"/>
+
+  <circle cx="18" cy="438" r="5" fill="#00d68f"/>
+  <text x="28" y="442" fill="#888" font-size="11">62,841 viewers</text>
+  <text x="150" y="442" fill="#555" font-size="11">|</text>
+  <text x="160" y="442" fill="#888" font-size="11">1080p · ~2.1s latency</text>
+  <text x="320" y="442" fill="#555" font-size="11">|</text>
+  <text x="330" y="442" fill="#888" font-size="11">CloudFront CDN · 18 nodes</text>
+  <text x="530" y="442" fill="#555" font-size="11">|</text>
+  <text x="540" y="442" fill="#888" font-size="11">Uptime 99.97%</text>
+  <text x="660" y="442" fill="#555" font-size="11">|</text>
+  <text x="670" y="442" fill="#00d68f" font-size="11">● All systems normal</text>
+</svg>
