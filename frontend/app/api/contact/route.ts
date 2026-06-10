@@ -2,21 +2,21 @@ import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 function buildHtml(
-  name: string,
-  email: string,
-  company: string,
-  message: string,
-  id: string,
-  receivedAt: string,
+	name: string,
+	email: string,
+	company: string,
+	message: string,
+	id: string,
+	receivedAt: string,
 ): string {
-  const companyRow = company
-    ? `<tr>
+	const companyRow = company
+		? `<tr>
         <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#64748b;font-size:13px;width:120px;vertical-align:top">Company</td>
         <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#1e293b;font-size:13px;font-weight:600">${company}</td>
        </tr>`
-    : '';
+		: '';
 
-  return `<!DOCTYPE html>
+	return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
@@ -123,14 +123,14 @@ function buildHtml(
 }
 
 function buildText(
-  name: string,
-  email: string,
-  company: string,
-  message: string,
-  id: string,
-  receivedAt: string,
+	name: string,
+	email: string,
+	company: string,
+	message: string,
+	id: string,
+	receivedAt: string,
 ): string {
-  return `New project inquiry — RDP Studio
+	return `New project inquiry — RDP Studio
 =====================================
 
 Name:     ${name}
@@ -148,74 +148,72 @@ Reply: ${email}
 }
 
 export async function POST(req: NextRequest) {
-  try {
-    const body = await req.json();
-    const name = String(body.name ?? '').trim();
-    const email = String(body.email ?? '').trim();
-    const company = String(body.company ?? '').trim();
-    const message = String(body.message ?? '').trim();
+	try {
+		const body = await req.json();
+		const name = String(body.name ?? '').trim();
+		const email = String(body.email ?? '').trim();
+		const company = String(body.company ?? '').trim();
+		const message = String(body.message ?? '').trim();
 
-    if (!name || !email || !message) {
-      return NextResponse.json(
-        { ok: false, message: 'Please fill in your name, email and a short message.' },
-        { status: 400 },
-      );
-    }
+		if (!name || !email || !message) {
+			return NextResponse.json(
+				{ ok: false, message: 'Please fill in your name, email and a short message.' },
+				{ status: 400 },
+			);
+		}
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return NextResponse.json(
-        { ok: false, message: 'Please provide a valid email address.' },
-        { status: 400 },
-      );
-    }
+		if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+			return NextResponse.json({ ok: false, message: 'Please provide a valid email address.' }, { status: 400 });
+		}
 
-    const id = `lead_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
-    const receivedAt = new Date().toLocaleString('en-IN', {
-      timeZone: 'Asia/Kolkata',
-      weekday: 'short',
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-    }) + ' IST';
+		const id = `lead_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+		const receivedAt =
+			new Date().toLocaleString('en-IN', {
+				timeZone: 'Asia/Kolkata',
+				weekday: 'short',
+				year: 'numeric',
+				month: 'short',
+				day: 'numeric',
+				hour: '2-digit',
+				minute: '2-digit',
+			}) + ' IST';
 
-    // Send email via Gmail SMTP
-    const emailUser = process.env.EMAIL_USER;
-    const emailPass = process.env.EMAIL_PASS;
+		// Send email via Gmail SMTP
+		const emailUser = process.env.EMAIL_USER;
+		const emailPass = process.env.EMAIL_PASS;
 
-    if (!emailUser || !emailPass) {
-      // Env vars not set — still return success so the form works
-      console.warn('[contact] EMAIL_USER / EMAIL_PASS not set — skipping email send');
-    } else {
-      const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: { user: emailUser, pass: emailPass },
-      });
+		if (!emailUser || !emailPass) {
+			// Env vars not set — still return success so the form works
+			console.warn('[contact] EMAIL_USER / EMAIL_PASS not set — skipping email send');
+		} else {
+			const transporter = nodemailer.createTransport({
+				service: 'gmail',
+				auth: { user: emailUser, pass: emailPass },
+			});
 
-      const companyLabel = company ? ` · ${company}` : '';
+			const companyLabel = company ? ` · ${company}` : '';
 
-      await transporter.sendMail({
-        from: `"RDP Studio" <${emailUser}>`,
-        to: 'devansddd77@gmail.com',
-        replyTo: `"${name}" <${email}>`,
-        subject: `🚀 New inquiry from ${name}${companyLabel} — RDP Studio`,
-        html: buildHtml(name, email, company, message, id, receivedAt),
-        text: buildText(name, email, company, message, id, receivedAt),
-      });
-    }
+			await transporter.sendMail({
+				from: `"RDP Studio" <${emailUser}>`,
+				to: 'devansddd77@gmail.com',
+				replyTo: `"${name}" <${email}>`,
+				subject: `🚀 New inquiry from ${name}${companyLabel} — RDP Studio`,
+				html: buildHtml(name, email, company, message, id, receivedAt),
+				text: buildText(name, email, company, message, id, receivedAt),
+			});
+		}
 
-    return NextResponse.json({
-      ok: true,
-      message: "Thanks — we'll be in touch within one business day.",
-      id,
-      receivedAt: new Date().toISOString(),
-    });
-  } catch (err: unknown) {
-    console.error('[contact] error:', err);
-    return NextResponse.json(
-      { ok: false, message: 'Something went wrong. Please email us directly.' },
-      { status: 500 },
-    );
-  }
+		return NextResponse.json({
+			ok: true,
+			message: "Thanks — we'll be in touch within one business day.",
+			id,
+			receivedAt: new Date().toISOString(),
+		});
+	} catch (err: unknown) {
+		console.error('[contact] error:', err);
+		return NextResponse.json(
+			{ ok: false, message: 'Something went wrong. Please email us directly.' },
+			{ status: 500 },
+		);
+	}
 }
