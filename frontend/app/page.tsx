@@ -5,7 +5,7 @@ import ContactForm from '@/components/ContactForm';
 import NavMobile from '@/components/NavMobile';
 import { SERVICES, WORKS, CAPABILITIES, TECH_STACK, PROCESS_STEPS } from './data';
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://rdpinfo.in';
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://rdpinfo.com';
 
 const jsonLd = {
   '@context': 'https://schema.org',
