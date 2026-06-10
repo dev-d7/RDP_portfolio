@@ -5,27 +5,68 @@ import ContactForm from '@/components/ContactForm';
 import NavMobile from '@/components/NavMobile';
 import { SERVICES, WORKS, CAPABILITIES, TECH_STACK, PROCESS_STEPS } from './data';
 
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://rdpinfo.in';
+
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'RDP Info',
-  alternateName: 'RDPInfo',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://rdpinfo.in',
-  description:
-    'RDP Info is a product engineering studio that builds live streaming platforms, HRMS, EdTech test engines, mobile apps with deep linking, and AWS cloud infrastructure.',
-  areaServed: 'Worldwide',
-  founder: { '@type': 'Person', name: 'Devansh' },
-  contactPoint: {
-    '@type': 'ContactPoint',
-    email: 'devansh@nexttoppers.com',
-    contactType: 'customer service',
-    availableLanguage: 'English',
-  },
-  knowsAbout: [
-    'Live Streaming', 'HRMS', 'EdTech', 'Mobile App Development',
-    'Firebase Dynamic Links', 'AWS', 'Kubernetes', 'DevOps', 'React Native', 'Next.js',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE}/#organization`,
+      name: 'RDP Info',
+      alternateName: ['RDPInfo', 'RDP Studio'],
+      url: SITE,
+      logo: { '@type': 'ImageObject', url: `${SITE}/og-image.png` },
+      description:
+        'RDP Info is a senior product engineering studio based in India. We build live streaming & OTT platforms, HRMS software, EdTech test series engines, iOS & Android mobile apps with deep linking, and production-grade AWS Kubernetes cloud infrastructure.',
+      founder: { '@type': 'Person', name: 'Devansh', jobTitle: 'Founder & Lead Engineer' },
+      areaServed: 'Worldwide',
+      contactPoint: {
+        '@type': 'ContactPoint',
+        email: 'devansh@nexttoppers.com',
+        contactType: 'Sales',
+        availableLanguage: 'English',
+      },
+      knowsAbout: [
+        'Live Streaming Platform Development', 'OTT Platform Development',
+        'HLS DASH Adaptive Streaming', 'EMQX Real-time Chat',
+        'HRMS Software Development', 'Human Resource Management System',
+        'Attendance Management Software', 'Payroll Software',
+        'EdTech Platform Development', 'Online Test Series Platform',
+        'Adaptive Test Engine Development', 'E-learning Platform',
+        'iOS App Development', 'Android App Development',
+        'React Native Development', 'Firebase Dynamic Links',
+        'Universal Links', 'App Links', 'Deferred Deep Linking',
+        'AWS Cloud Infrastructure', 'Kubernetes EKS',
+        'Terraform Infrastructure as Code', 'DevOps CI/CD',
+        'CloudFront CDN', 'Route53 DNS', 'ALB Load Balancer',
+        'Next.js Development', 'NestJS Development',
+        'Grafana Prometheus Monitoring', 'SEO Website Development',
+      ],
+      sameAs: ['https://github.com/dev-d7'],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE}/#website`,
+      url: SITE,
+      name: 'RDP Info',
+      publisher: { '@id': `${SITE}/#organization` },
+    },
+    {
+      '@type': 'ItemList',
+      name: 'Services offered by RDP Info',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Live Streaming & OTT Platform Development' },
+        { '@type': 'ListItem', position: 2, name: 'HRMS Software Development' },
+        { '@type': 'ListItem', position: 3, name: 'EdTech & Test Series Platform Development' },
+        { '@type': 'ListItem', position: 4, name: 'AWS Cloud & DevOps Engineering' },
+        { '@type': 'ListItem', position: 5, name: 'iOS & Android Mobile App Development' },
+        { '@type': 'ListItem', position: 6, name: 'Website Development & SEO' },
+        { '@type': 'ListItem', position: 7, name: 'UI/UX Design' },
+        { '@type': 'ListItem', position: 8, name: 'Analytics & Dashboard Development' },
+      ],
+    },
   ],
-  sameAs: ['https://github.com/dev-d7'],
 };
 
 export default function HomePage() {
