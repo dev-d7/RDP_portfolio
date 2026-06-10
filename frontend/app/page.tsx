@@ -5,9 +5,36 @@ import ContactForm from '@/components/ContactForm';
 import NavMobile from '@/components/NavMobile';
 import { SERVICES, WORKS, CAPABILITIES, TECH_STACK, PROCESS_STEPS } from './data';
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'RDP Info',
+  alternateName: 'RDPInfo',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://rdpinfo.in',
+  description:
+    'RDP Info is a product engineering studio that builds live streaming platforms, HRMS, EdTech test engines, mobile apps with deep linking, and AWS cloud infrastructure.',
+  areaServed: 'Worldwide',
+  founder: { '@type': 'Person', name: 'Devansh' },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'devansh@nexttoppers.com',
+    contactType: 'customer service',
+    availableLanguage: 'English',
+  },
+  knowsAbout: [
+    'Live Streaming', 'HRMS', 'EdTech', 'Mobile App Development',
+    'Firebase Dynamic Links', 'AWS', 'Kubernetes', 'DevOps', 'React Native', 'Next.js',
+  ],
+  sameAs: ['https://github.com/dev-d7'],
+};
+
 export default function HomePage() {
 	return (
 		<>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+			/>
 			{/* NAV */}
 			<header className='nav'>
 				<div className='container nav-inner'>
