@@ -362,7 +362,7 @@ export default function HomePage() {
 									color: 'rgba(255,255,255,0.8)',
 								}}
 							>
-								<Row k='Email' v='devanshdd77@gmail.com.com' />
+								<Row k='Email' v='devanshdd77@gmail.com' />
 								<Row k='Based in' v='India · IST (UTC +5:30)' />
 								<Row k='Hours' v='Mon – Sat · 10:00 – 19:00 IST' />
 								<Row k='Response' v='< 24 hours' />
