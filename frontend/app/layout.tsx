@@ -6,12 +6,11 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://rdpinfo.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default:
-      "RDP Info — Live Streaming, HRMS, EdTech & Cloud Platform Development India",
-    template: "%s | RDP Info",
+    default: "Mission JEET — Live Classes & Courses for JEE Main & Advanced",
+    template: "%s | Mission JEET",
   },
   description:
-    "RDP Info builds live streaming & OTT platforms, HRMS software, EdTech test series engines, iOS & Android apps with deep linking, and AWS Kubernetes infrastructure. Senior product engineering team based in India. 60K+ concurrent users served.",
+    "Mission JEET offers daily live classes, expert mentorship, test series with All-India rank comparison, and curated study material for JEE Main & Advanced aspirants.",
   keywords: [
     // Brand
     "rdpinfo", "rdp info", "RDP Info studio", "RDP portfolio",
@@ -87,9 +86,9 @@ export const metadata: Metadata = {
     "full stack development company India",
     "startup product development India",
   ],
-  authors: [{ name: "RDP Info", url: SITE_URL }],
-  creator: "RDP Info",
-  publisher: "RDP Info",
+  authors: [{ name: "Mission JEET", url: SITE_URL }],
+  creator: "Mission JEET",
+  publisher: "Mission JEET",
   robots: {
     index: true,
     follow: true,
@@ -106,25 +105,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: SITE_URL,
-    siteName: "RDP Info",
-    title:
-      "RDP Info — Live Streaming, HRMS, EdTech & Cloud Platform Development",
+    siteName: "Mission JEET",
+    title: "Mission JEET — Live Classes & Courses for JEE Main & Advanced",
     description:
-      "We build live streaming platforms, HRMS, EdTech test engines, mobile apps with deep linking, and AWS Kubernetes infrastructure. Senior engineering team, India.",
+      "Daily live classes, expert mentorship, test series with All-India rank comparison, and curated study material for JEE aspirants.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "RDP Info — Product Engineering Studio",
+        alt: "Mission JEET — Live Classes & Courses",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "RDP Info — Live Streaming, HRMS, EdTech & Cloud Development",
+    title: "Mission JEET — Live Classes & Courses for JEE Main & Advanced",
     description:
-      "Live streaming · HRMS · EdTech · Mobile deep linking · AWS cloud infrastructure. Senior engineering team based in India.",
+      "Daily live classes, mentorship, test series and study material for JEE Main & Advanced aspirants.",
     images: ["/og-image.png"],
   },
   verification: {

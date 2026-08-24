@@ -8,8 +8,10 @@
   --muted-2: #8a8a8a;
   --line: #e7e7e3;
   --line-2: #efefe9;
-  --accent: #0f62fe;
-  --accent-soft: #eaf1ff;
+  --accent: #2454ff;
+  --accent-2: #e6231e;
+  --accent-soft: #eaf0ff;
+  --jeet-dark: #0d0e12;
   --success: #0e7c5a;
   --warn: #a35a00;
   --radius: 14px;
@@ -157,7 +159,7 @@ p { margin: 0; color: var(--muted); }
 .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 64px; align-items: center; }
 @media (max-width: 920px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } }
 .hero h1 span.grad {
-  background: linear-gradient(90deg, #0a0a0a 0%, #0a0a0a 40%, var(--accent) 100%);
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -263,7 +265,7 @@ section { padding: 96px 0; border-top: 1px solid var(--line-2); }
 }
 .shot-placeholder .ph-title { font-size: 13px; color: var(--ink-2); font-weight: 600; }
 .work-body { padding: 22px; }
-.work-body .kicker { font-size: 12px; color: var(--accent); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.work-body .kicker { font-size: 12px; color: var(--accent-2); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .work-body h3 { margin: 8px 0 6px; font-size: 22px; }
 .work-body p { font-size: 14.5px; line-height: 1.65; }
 .work-meta {
@@ -405,3 +407,123 @@ footer { padding: 48px 0 36px; border-top: 1px solid var(--line-2); }
 }
 .step:hover { transform: translateY(-2px); border-color: #d0d0ca; box-shadow: var(--shadow-sm); }
 .member:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+
+/* ══════════════════════════════════════════════
+   Mission-JEET style dark nav + carousel + courses
+   ══════════════════════════════════════════════ */
+
+.nav-jeet {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--jeet-dark);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.nav-jeet .nav-inner { height: 68px; gap: 20px; }
+.brand-jeet {
+  display: flex; align-items: center; font-weight: 800;
+  font-size: 20px; letter-spacing: -0.02em; flex-shrink: 0;
+}
+.brand-jeet .m1 { color: #fff; }
+.brand-jeet .m2 {
+  background: var(--accent-2); color: #fff; padding: 2px 8px 4px;
+  border-radius: 6px; margin-left: 2px;
+}
+.nav-search {
+  flex: 1; max-width: 460px; display: none;
+  align-items: center; gap: 10px;
+  background: #fff; border-radius: 999px;
+  padding: 10px 16px; color: #6b6b6b; font-size: 14px;
+}
+.nav-search svg { flex-shrink: 0; }
+@media (min-width: 761px) { .nav-search { display: flex; } }
+.nav-jeet .nav-links a { color: rgba(255,255,255,0.85); }
+.nav-jeet .nav-links a:hover { color: #fff; }
+.nav-jeet .nav-cta {
+  background: #fff; color: var(--jeet-dark); white-space: nowrap;
+}
+.nav-jeet .nav-cta:hover { background: #f0f0f0; }
+.nav-jeet .nav-burger span { background: #fff; }
+
+/* Hero carousel */
+.jeet-hero { padding: 28px 0 8px; }
+.carousel {
+  position: relative; border-radius: 20px; overflow: hidden;
+  aspect-ratio: 16/6.2; min-height: 200px;
+  background: radial-gradient(1200px 500px at 15% 20%, #16224a 0%, transparent 60%),
+    linear-gradient(120deg, #050810 0%, #0c1530 45%, #142657 100%);
+  box-shadow: var(--shadow);
+}
+.carousel-slide {
+  position: absolute; inset: 0; display: flex; align-items: center;
+  justify-content: space-between; padding: 0 clamp(20px, 6vw, 72px);
+  opacity: 0; transition: opacity 0.6s ease;
+}
+.carousel-slide.active { opacity: 1; }
+.carousel-slide .cs-badge {
+  font-family: "JetBrains Mono", monospace; font-weight: 800;
+  line-height: 1; letter-spacing: -0.01em;
+  text-transform: uppercase; text-shadow: 0 2px 0 rgba(0,0,0,0.25);
+}
+.carousel-slide .cs-badge b {
+  display: block; font-size: clamp(26px, 4.2vw, 54px);
+  background: linear-gradient(180deg, #ffe9a8 0%, #f4b93a 55%, #c98a12 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.carousel-slide .cs-badge span {
+  display: block; font-size: clamp(12px, 1.6vw, 18px); color: #fff;
+  margin-top: 6px; letter-spacing: 0.08em;
+}
+.carousel-dots {
+  position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%);
+  display: flex; gap: 8px; z-index: 5;
+}
+.carousel-dots button {
+  width: 7px; height: 7px; border-radius: 50%; border: none;
+  background: rgba(255,255,255,0.35); padding: 0; cursor: pointer;
+}
+.carousel-dots button.active { width: 20px; border-radius: 4px; background: #fff; }
+
+/* Trending courses */
+.trending-head {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 22px; font-weight: 800; margin: 44px 0 22px;
+}
+.course-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px;
+}
+.course-card {
+  border-radius: 14px; overflow: hidden; position: relative;
+  background: linear-gradient(150deg, #1a1f2e 0%, #0e0e14 100%);
+  border: 1px solid rgba(0,0,0,0.06); box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.course-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.course-card .cc-top {
+  aspect-ratio: 4/3; position: relative;
+  display: flex; align-items: flex-end; padding: 14px;
+  background: radial-gradient(500px 200px at 20% 0%, rgba(230,35,30,0.25), transparent 60%),
+    linear-gradient(160deg, #262b3d 0%, #101017 100%);
+}
+.course-card .cc-badge {
+  position: absolute; top: 12px; left: 12px;
+  background: #b5121a; color: #fff; font-size: 11px; font-weight: 700;
+  padding: 4px 9px; border-radius: 5px; text-transform: uppercase;
+}
+.course-card .cc-price {
+  position: absolute; top: 10px; right: 10px; text-align: right;
+  color: #fff; font-size: 12px;
+}
+.course-card .cc-price .old { text-decoration: line-through; color: rgba(255,255,255,0.5); display: block; }
+.course-card .cc-price .new { font-weight: 800; font-size: 14px; }
+.course-card .cc-title {
+  color: #fff; font-weight: 800; font-size: 18px; line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.course-card .cc-title em {
+  font-style: normal; color: var(--accent-2);
+}
+.course-card .cc-cta {
+  display: block; text-align: center; background: var(--accent-2); color: #fff;
+  font-size: 12.5px; font-weight: 700; letter-spacing: 0.03em;
+  padding: 10px; text-transform: uppercase;
+}
+.course-card .cc-cta:hover { background: #c81a15; }

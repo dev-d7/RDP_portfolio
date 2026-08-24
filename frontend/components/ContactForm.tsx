@@ -62,16 +62,16 @@ export default function ContactForm() {
           <input id="email" name="email" type="email" placeholder="you@company.com" autoComplete="email" required />
         </div>
         <div className="form-field full">
-          <label htmlFor="company">Company (optional)</label>
-          <input id="company" name="company" type="text" placeholder="Company / brand" autoComplete="organization" />
+          <label htmlFor="company">Current class (optional)</label>
+          <input id="company" name="company" type="text" placeholder="Class 11 / Class 12 / Dropper" autoComplete="off" />
         </div>
         <div className="form-field full">
-          <label htmlFor="message">What are you building?</label>
+          <label htmlFor="message">What are you preparing for?</label>
           <textarea
             id="message"
             name="message"
             rows={4}
-            placeholder="A live streaming platform for 10K viewers, an HRMS pilot, an EdTech test engine…"
+            placeholder="JEE Main 2027, currently in Class 11, need help with Physics & Maths…"
             required
           />
         </div>
@@ -79,9 +79,9 @@ export default function ContactForm() {
 
       <div className="cta-actions">
         <button className="btn btn-primary" type="submit" disabled={status === "loading"}>
-          {status === "loading" ? "Sending…" : "Send message"} <span className="arrow">→</span>
+          {status === "loading" ? "Sending…" : "Book free demo"} <span className="arrow">→</span>
         </button>
-        <a className="btn btn-ghost" href="mailto:devansh@nexttoppers.com?subject=Project%20with%20RDP">
+        <a className="btn btn-ghost" href="mailto:devansh@nexttoppers.com?subject=Demo%20class%20enquiry%20-%20Mission%20JEET">
           Email instead
         </a>
       </div>

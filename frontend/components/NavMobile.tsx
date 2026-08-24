@@ -2,11 +2,10 @@
 import { useState, useEffect } from 'react';
 
 const LINKS = [
-  { href: '#services', label: 'Services' },
-  { href: '#work', label: 'Work' },
-  { href: '#devops', label: 'Cloud & DevOps' },
-  { href: '#process', label: 'Process' },
-  { href: '#team', label: 'Team' },
+  { href: '#services', label: 'Courses' },
+  { href: '#work', label: 'Results' },
+  { href: '#devops', label: 'Why Us' },
+  { href: '#process', label: 'How it works' },
 ];
 
 export default function NavMobile() {
@@ -39,7 +38,7 @@ export default function NavMobile() {
               </a>
             ))}
             <a href="#contact" className="mobile-panel-cta" onClick={() => setOpen(false)}>
-              Start a project →
+              Book free demo →
             </a>
           </div>
         </div>

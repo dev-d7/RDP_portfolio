@@ -3,7 +3,16 @@ import Icon from '@/components/Icon';
 import Shot from '@/components/Shot';
 import ContactForm from '@/components/ContactForm';
 import NavMobile from '@/components/NavMobile';
-import { SERVICES, WORKS, CAPABILITIES, TECH_STACK, PROCESS_STEPS } from './data';
+import Carousel from '@/components/Carousel';
+import {
+	SERVICES,
+	WORKS,
+	CAPABILITIES,
+	TECH_STACK,
+	PROCESS_STEPS,
+	HERO_SLIDES,
+	TRENDING_COURSES,
+} from './data';
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://rdpinfo.com';
 
@@ -11,59 +20,47 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'Organization',
+      '@type': 'EducationalOrganization',
       '@id': `${SITE}/#organization`,
-      name: 'RDP Info',
-      alternateName: ['RDPInfo', 'RDP Studio'],
+      name: 'Mission JEET',
+      alternateName: ['MissionJEET'],
       url: SITE,
       logo: { '@type': 'ImageObject', url: `${SITE}/og-image.png` },
       description:
-        'RDP Info is a senior product engineering studio based in India. We build live streaming & OTT platforms, HRMS software, EdTech test series engines, iOS & Android mobile apps with deep linking, and production-grade AWS Kubernetes cloud infrastructure.',
-      founder: { '@type': 'Person', name: 'Devansh', jobTitle: 'Founder & Lead Engineer' },
-      areaServed: 'Worldwide',
+        'Mission JEET is a live-classes platform for JEE Main & Advanced aspirants — daily live classes, expert mentorship, test series with All-India rank comparison, and curated study material.',
+      areaServed: 'India',
       contactPoint: {
         '@type': 'ContactPoint',
         email: 'devansh@nexttoppers.com',
-        contactType: 'Sales',
+        contactType: 'Admissions',
         availableLanguage: 'English',
       },
       knowsAbout: [
-        'Live Streaming Platform Development', 'OTT Platform Development',
-        'HLS DASH Adaptive Streaming', 'EMQX Real-time Chat',
-        'HRMS Software Development', 'Human Resource Management System',
-        'Attendance Management Software', 'Payroll Software',
-        'EdTech Platform Development', 'Online Test Series Platform',
-        'Adaptive Test Engine Development', 'E-learning Platform',
-        'iOS App Development', 'Android App Development',
-        'React Native Development', 'Firebase Dynamic Links',
-        'Universal Links', 'App Links', 'Deferred Deep Linking',
-        'AWS Cloud Infrastructure', 'Kubernetes EKS',
-        'Terraform Infrastructure as Code', 'DevOps CI/CD',
-        'CloudFront CDN', 'Route53 DNS', 'ALB Load Balancer',
-        'Next.js Development', 'NestJS Development',
-        'Grafana Prometheus Monitoring', 'SEO Website Development',
+        'JEE Main Preparation', 'JEE Advanced Preparation',
+        'Live Online Classes', 'Test Series & Rank Analysis',
+        'Doubt Solving', 'Study Material & Notes',
       ],
-      sameAs: ['https://github.com/dev-d7'],
     },
     {
       '@type': 'WebSite',
       '@id': `${SITE}/#website`,
       url: SITE,
-      name: 'RDP Info',
+      name: 'Mission JEET',
       publisher: { '@id': `${SITE}/#organization` },
     },
     {
       '@type': 'ItemList',
-      name: 'Services offered by RDP Info',
+      name: 'Courses & offerings from Mission JEET',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Live Streaming & OTT Platform Development' },
-        { '@type': 'ListItem', position: 2, name: 'HRMS Software Development' },
-        { '@type': 'ListItem', position: 3, name: 'EdTech & Test Series Platform Development' },
-        { '@type': 'ListItem', position: 4, name: 'AWS Cloud & DevOps Engineering' },
-        { '@type': 'ListItem', position: 5, name: 'iOS & Android Mobile App Development' },
-        { '@type': 'ListItem', position: 6, name: 'Website Development & SEO' },
-        { '@type': 'ListItem', position: 7, name: 'UI/UX Design' },
-        { '@type': 'ListItem', position: 8, name: 'Analytics & Dashboard Development' },
+        { '@type': 'ListItem', position: 1, name: 'Live Interactive Classes' },
+        { '@type': 'ListItem', position: 2, name: 'Expert Faculty & Mentorship' },
+        { '@type': 'ListItem', position: 3, name: 'Test Series & Rank Analysis' },
+        { '@type': 'ListItem', position: 4, name: 'Recorded Lecture Library' },
+        { '@type': 'ListItem', position: 5, name: 'Study Material & Notes' },
+        { '@type': 'ListItem', position: 6, name: 'Doubt Solving' },
+        { '@type': 'ListItem', position: 7, name: 'Mission JEET Mobile App' },
+        { '@type': 'ListItem', position: 8, name: 'Practice Question Bank' },
+        { '@type': 'ListItem', position: 9, name: 'Performance Analytics' },
       ],
     },
   ],
@@ -77,116 +74,73 @@ export default function HomePage() {
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 			/>
 			{/* NAV */}
-			<header className='nav'>
+			<header className='nav nav-jeet'>
 				<div className='container nav-inner'>
-					<a className='brand' href='#top'>
-						<span className='brand-mark'>R</span>
-						<span>RDP</span>
+					<a className='brand-jeet' href='#top'>
+						<span className='m1'>Mission</span>
+						<span className='m2'>JEET</span>
 					</a>
+					<div className='nav-search'>
+						<Icon name='search' />
+						<span>What are you looking for...</span>
+					</div>
 					<nav className='nav-links'>
-						<a href='#services'>Services</a>
-						<a href='#work'>Work</a>
-						<a href='#devops'>Cloud &amp; DevOps</a>
-						<a href='#process'>Process</a>
+						<a href='#work'>Blogs</a>
+						<a href='#services'>Our Products</a>
+						<a href='#process'>How it works</a>
 					</nav>
 					<a className='nav-cta' href='#contact'>
-						Start a project →
+						Login / Register
 					</a>
 					<NavMobile />
 				</div>
 			</header>
 
 			<main id='top'>
-				{/* HERO */}
-				<section className='hero' style={{ borderTop: 'none' }}>
-					<div className='container hero-grid'>
-						<div>
-							<span className='eyebrow'>RDP · Product engineering studio</span>
-							<h1 style={{ marginTop: 18 }}>
-								We build <span className='grad'>reliable digital products</span> — from idea to scale.
-							</h1>
-							<p className='lead'>
-								RDP is a small, senior team shipping live streaming platforms, HRMS, online test
-								engines, mobile apps with first-class deep linking, and the cloud infrastructure — DNS,
-								routing, Kubernetes — that keeps them all running at scale. We design, build, and
-								operate — so you can launch faster and sleep better.
-							</p>
-							<div className='hero-ctas'>
-								<a className='btn btn-primary' href='#contact'>
-									Book a discovery call <span className='arrow'>→</span>
-								</a>
-								<a className='btn' href='#work'>
-									See our work
-								</a>
-							</div>
-							<div className='hero-chips'>
-								<span className='chip'>OTT &amp; Live Streaming</span>
-								<span className='chip'>HRMS</span>
-								<span className='chip'>EdTech &amp; Test Series</span>
-								<span className='chip'>Deep Links · Push</span>
-								<span className='chip'>iOS · Android</span>
-								<span className='chip'>AWS · Kubernetes</span>
-							</div>
-						</div>
-						<aside className='hero-card'>
-							<div className='eyebrow' style={{ marginBottom: 14 }}>
-								By the numbers
-							</div>
-							<div className='hero-stats'>
-								<div className='stat'>
-									<div className='num'>60K+</div>
-									<div className='lbl'>Concurrent users supported</div>
-								</div>
-								<div className='stat'>
-									<div className='num'>99.95%</div>
-									<div className='lbl'>Production uptime target</div>
-								</div>
-								<div className='stat'>
-									<div className='num'>3+ yrs</div>
-									<div className='lbl'>Cloud &amp; DevOps experience</div>
-								</div>
-								<div className='stat'>
-									<div className='num'>Zero</div>
-									<div className='lbl'>Downtime deployments</div>
-								</div>
-							</div>
-							<div style={{ marginTop: 18, fontSize: 12.5, color: 'var(--muted-2)', lineHeight: 1.6 }}>
-								Production-grade infrastructure for OTT, EdTech and real-time communication — designed
-								for traffic spikes, regulated workloads, and lean teams.
-							</div>
-						</aside>
+				{/* HERO CAROUSEL */}
+				<section className='jeet-hero' style={{ borderTop: 'none' }}>
+					<div className='container'>
+						<Carousel slides={HERO_SLIDES} />
 					</div>
 				</section>
 
-				{/* TRUST */}
-				<div className='trust'>
-					<div className='container trust-inner'>
-						<div className='trust-label'>Tech we ship with</div>
-						<div className='trust-stack'>
-							<span>AWS</span>
-							<span>Kubernetes / EKS</span>
-							<span>Docker</span>
-							<span>Terraform</span>
-							<span>GitHub Actions</span>
-							<span>Redis</span>
-							<span>EMQX</span>
-							<span>Grafana · Prometheus</span>
-							<span>Next.js</span>
-							<span>NestJS</span>
-							<span>React Native</span>
+				{/* TRENDING COURSES */}
+				<section style={{ paddingTop: 0, paddingBottom: 48, borderTop: 'none' }}>
+					<div className='container'>
+						<div className='trending-head'>🔥 Trending Course</div>
+						<div className='course-grid'>
+							{TRENDING_COURSES.map((c) => (
+								<div className='course-card' key={c.title + c.highlight}>
+									<div className='cc-top'>
+										<span className='cc-badge'>{c.cls}</span>
+										<span className='cc-price'>
+											<span className='old'>{c.oldPrice}</span>
+											<span className='new'>{c.newPrice}</span>
+										</span>
+										<div className='cc-title'>
+											{c.title}
+											<br />
+											<em>{c.highlight}</em>
+										</div>
+									</div>
+									<a className='cc-cta' href='#contact'>
+										Enroll now
+									</a>
+								</div>
+							))}
 						</div>
 					</div>
-				</div>
+				</section>
 
 				{/* SERVICES */}
 				<section id='services'>
 					<div className='container'>
 						<div className='section-head'>
-							<span className='eyebrow'>What we do</span>
-							<h2>Full-stack product engineering, end to end.</h2>
+							<span className='eyebrow'>Courses & offerings</span>
+							<h2>Everything a JEE aspirant needs, in one place.</h2>
 							<p>
-								From a first prototype to scaling past your first million users — we cover the product,
-								the platform, and the operations behind them.
+								From daily live classes to test series and mentorship — every part of your
+								preparation is designed to work together, not as separate add-ons.
 							</p>
 						</div>
 
@@ -210,15 +164,15 @@ export default function HomePage() {
 					</div>
 				</section>
 
-				{/* WORK */}
+				{/* WORK / RESULTS */}
 				<section id='work'>
 					<div className='container'>
 						<div className='section-head'>
-							<span className='eyebrow'>Featured work</span>
-							<h2>Products we&rsquo;ve helped design, build and operate.</h2>
+							<span className='eyebrow'>How students prepare with us</span>
+							<h2>A structured path from first class to exam day.</h2>
 							<p>
-								A snapshot of recent engagements — spanning OTT streaming, enterprise HR platforms,
-								high-traffic EdTech, cloud infrastructure, mobile deep linking and SEO-driven websites.
+								A snapshot of how Mission JEET students actually study — daily classes, weekly
+								tests, personal mentorship, and a mobile app that keeps it all in one place.
 							</p>
 						</div>
 
@@ -244,45 +198,45 @@ export default function HomePage() {
 					</div>
 				</section>
 
-				{/* DEVOPS */}
+				{/* WHY US */}
 				<section id='devops' className='devops'>
 					<div className='container'>
 						<div className='section-head'>
-							<span className='eyebrow'>Cloud &amp; DevOps engineering</span>
-							<h2>Infrastructure that scales when your traffic does.</h2>
+							<span className='eyebrow'>Why Mission JEET</span>
+							<h2>Built for consistency, not just content.</h2>
 							<p>
-								Our DevOps lead has 3+ years designing and operating production-grade cloud-native
-								systems on AWS — for OTT, EdTech and real-time communication products running at serious
-								scale.
+								Recorded lectures are everywhere. What actually moves a rank is a fixed daily
+								routine, honest feedback on where you stand, and a mentor who notices when you
+								fall behind.
 							</p>
 						</div>
 
 						<div className='devops-grid'>
 							<div>
-								<h3 style={{ fontSize: 22 }}>What we deliver</h3>
+								<h3 style={{ fontSize: 22 }}>What every student gets</h3>
 								<p style={{ marginTop: 10, fontSize: 15, lineHeight: 1.7 }}>
-									Highly available Kubernetes platforms on Amazon EKS, automated CI/CD with
-									zero-downtime deploys, multi-account AWS networking, infrastructure-as-code with
-									Terraform, dynamic URL routing and DNS management, and observability stacks
-									engineers actually trust.
+									A daily live-class timetable across Physics, Chemistry and Maths, weekly
+									full-syllabus tests with All-India rank comparison, a dedicated mentor for
+									1:1 check-ins, and curated notes and question banks — accessible on web and
+									our mobile app, with offline downloads for patchy connections.
 								</p>
 
 								<div className='stat-row'>
 									<div className='stat'>
-										<div className='num'>60K+</div>
-										<div className='lbl'>Concurrent users architected</div>
+										<div className='num'>Daily</div>
+										<div className='lbl'>Live class timetable</div>
 									</div>
 									<div className='stat'>
-										<div className='num'>EKS</div>
-										<div className='lbl'>Production Kubernetes clusters</div>
+										<div className='num'>50+</div>
+										<div className='lbl'>Tests per year</div>
 									</div>
 									<div className='stat'>
-										<div className='num'>IaC</div>
-										<div className='lbl'>100% Terraform modules</div>
+										<div className='num'>1:1</div>
+										<div className='lbl'>Mentor check-ins</div>
 									</div>
 									<div className='stat'>
-										<div className='num'>24/7</div>
-										<div className='lbl'>Observability &amp; on-call</div>
+										<div className='num'>App</div>
+										<div className='lbl'>iOS & Android, offline-ready</div>
 									</div>
 								</div>
 
@@ -300,7 +254,7 @@ export default function HomePage() {
 
 								<div style={{ marginTop: 24 }}>
 									<div className='eyebrow' style={{ marginBottom: 10 }}>
-										Core stack
+										Everything included
 									</div>
 									<div className='tech-pills'>
 										{TECH_STACK.map((t) => (
@@ -314,18 +268,18 @@ export default function HomePage() {
 
 							<aside>
 								<div className='arch-card'>
-									<span className='eyebrow'>Case study</span>
+									<span className='eyebrow'>Test series</span>
 									<h3 style={{ marginTop: 10 }}>
-										Scaling a real-time platform to 60K+ concurrent users
+										Tests modelled on the real JEE pattern, evaluated instantly
 									</h3>
 									<p style={{ marginTop: 8, fontSize: 14.5, lineHeight: 1.65 }}>
-										EKS-backed microservices, EMQX for real-time chat, HPA + Cluster Autoscaler for
-										elastic load handling, ALB/NLB load balancing, CloudFront and Redis caching, and
-										a Grafana/Prometheus/PagerDuty stack closing the loop on alerts.
+										Chapter-wise and full-syllabus mocks, instant scoring, detailed solutions,
+										and an All-India rank comparison after every attempt — so you always know
+										exactly where you stand.
 									</p>
 									<Shot
 										src='screenshots/devops-case-study.svg'
-										title='Architecture / Dashboard Screenshot'
+										title='Test Series & Rank Dashboard'
 										variant='arch-shot'
 									/>
 
@@ -335,9 +289,8 @@ export default function HomePage() {
 											<div>
 												<b>Outcome</b>
 												<span>
-													Zero-downtime deploys, predictable scaling on peak events, and
-													meaningful reduction in monthly AWS spend through right-sizing and
-													caching.
+													Students see exactly which chapters are costing them rank —
+													and a mentor to help close those gaps before the next test.
 												</span>
 											</div>
 										</div>
@@ -345,33 +298,32 @@ export default function HomePage() {
 								</div>
 
 								<div className='arch-card' style={{ marginTop: 18 }}>
-									<span className='eyebrow'>Dynamic link engineering</span>
+									<span className='eyebrow'>Doubt solving & mentorship</span>
 									<h3 style={{ marginTop: 10, fontSize: 18 }}>
-										Deep links, URL routing &amp; dynamic DNS
+										A mentor who actually knows your progress
 									</h3>
 									<p style={{ marginTop: 6, fontSize: 14, lineHeight: 1.65 }}>
-										We own the full URL lifecycle — from Firebase Dynamic Links and Universal Links
-										in mobile apps to CloudFront signed URLs, ALB path-based routing rules, and
-										Route53 dynamic DNS for multi-tenant SaaS.
+										Live doubt solving during class, an async forum for everything else, and
+										weekly 1:1 mentor check-ins to review scores, weak topics and study plans.
 									</p>
 									<div style={{ marginTop: 16, display: 'grid', gap: 8 }}>
 										<div className='cap' style={{ background: 'var(--bg-soft)' }}>
 											<div className='dot' />
 											<div>
-												<b>Mobile deep linking</b>
+												<b>Doubt solving</b>
 												<span>
-													Firebase Dynamic Links, Universal Links (iOS), App Links (Android),
-													deferred install attribution.
+													In-class live Q&A, plus an async doubt forum with mentor
+													replies within hours.
 												</span>
 											</div>
 										</div>
 										<div className='cap' style={{ background: 'var(--bg-soft)' }}>
 											<div className='dot' />
 											<div>
-												<b>Infrastructure routing</b>
+												<b>Parent visibility</b>
 												<span>
-													ALB listener rules, Nginx URL rewrites, wildcard DNS, CloudFront
-													signed URLs, multi-tenant subdomain routing.
+													Regular progress reports so parents stay informed without
+													chasing anyone for updates.
 												</span>
 											</div>
 										</div>
@@ -386,9 +338,9 @@ export default function HomePage() {
 				<section id='process'>
 					<div className='container'>
 						<div className='section-head'>
-							<span className='eyebrow'>How we work</span>
-							<h2>A simple, predictable engagement.</h2>
-							<p>One senior team. Weekly demos. Production-grade output. No black boxes.</p>
+							<span className='eyebrow'>How it works</span>
+							<h2>Getting started is simple.</h2>
+							<p>Free demo class first. No commitment until you know it's a fit.</p>
 						</div>
 
 						<div className='process-grid'>
@@ -409,16 +361,16 @@ export default function HomePage() {
 						<div className='cta'>
 							<div>
 								<span className='eyebrow' style={{ color: '#fff', opacity: 0.7 }}>
-									Start a project
+									Book a free demo class
 								</span>
 								<h2 style={{ marginTop: 14 }}>
-									Have a product to build or scale?
+									Ready to start preparing
 									<br />
-									Let&rsquo;s talk.
+									the right way?
 								</h2>
 								<p>
-									Tell us what you&rsquo;re working on. We&rsquo;ll come back within one business day
-									with a discovery call slot and a rough plan of attack.
+									Tell us your target exam and current class. We&rsquo;ll get back within one
+									business day with a free demo class slot.
 								</p>
 								<ContactForm />
 							</div>
@@ -430,11 +382,11 @@ export default function HomePage() {
 									color: 'rgba(255,255,255,0.8)',
 								}}
 							>
-								<Row k='Email' v='devanshdd77@gmail.com' />
+								<Row k='Email' v='devansh@nexttoppers.com' />
 								<Row k='Based in' v='India · IST (UTC +5:30)' />
 								<Row k='Hours' v='Mon – Sat · 10:00 – 19:00 IST' />
 								<Row k='Response' v='< 24 hours' />
-								<Row k='Engagement' v='Fixed-scope or retainer' />
+								<Row k='Demo class' v='Free, no commitment' />
 							</div>
 						</div>
 					</div>
@@ -443,11 +395,11 @@ export default function HomePage() {
 
 			<footer>
 				<div className='container foot'>
-					<div>© {new Date().getFullYear()} RDP. Built with care.</div>
+					<div>© {new Date().getFullYear()} Mission JEET. All rights reserved.</div>
 					<div>
-						<a href='#services'>Services</a> &nbsp;·&nbsp;
-						<a href='#work'>Work</a> &nbsp;·&nbsp;
-						<a href='#devops'>DevOps</a> &nbsp;·&nbsp;
+						<a href='#services'>Courses</a> &nbsp;·&nbsp;
+						<a href='#work'>Results</a> &nbsp;·&nbsp;
+						<a href='#devops'>Why Us</a> &nbsp;·&nbsp;
 						<a href='#contact'>Contact</a>
 					</div>
 				</div>
